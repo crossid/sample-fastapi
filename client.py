@@ -99,9 +99,6 @@ class OIDCClient:
     async with httpx.AsyncClient() as client:
       keyset = (await client.get(self.jwks_uri)).json()['keys']
       signing_key = jwt.algorithms.RSAAlgorithm.from_jwk(next(key for key in keyset if key['kid'] == header['kid']))
-      # k = next(key for key in keyset if key['kid'] == header['kid'])
-      # print(k)
-      # jwt.algorithms.RSAAlgorithm.from_jwk(dumps(k))
 
     data = jwt.decode(
       token,
