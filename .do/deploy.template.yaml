@@ -10,10 +10,3 @@ spec:
       envs:
         - key: ISSUER_BASE_URL
           value: "https://<tenant>.crossid.io/oauth2/"
-        - key: CLIENT_ID
-          value: "<client_id>"
-        - key: CLIENT_SECRET
-          value: "<client_secret>"
-          type: SECRET
-        - key: REDIRECT_URI
-          value: "${_self.PUBLIC_URL}callback"
