@@ -1,0 +1,1 @@
+web: uvicorn --worker-tmp-dir /dev/shm --port 8080 app:app
