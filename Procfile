@@ -1,1 +1,1 @@
-web: uvicorn --worker-tmp-dir /dev/shm --port 8080 app:app
+web: gunicorn --worker-tmp-dir /dev/shm -k uvicorn.workers.UvicornWorker --config gunicorn_config.py app:app
