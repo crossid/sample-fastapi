@@ -11,8 +11,10 @@ pip3 install -r requirements.txt
 Then run server with:
 
 ```bash
-ISSUER_BASE_URL=https://crossid.us.local.crossid.io/oauth2/ \
-REQUESTS_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt \
+CLIENT_ID=<client_id>\
+CLIENT_SECRET=<client_secret> \
+REDIRECT_URI=https://localhost/callback \
+ISSUER_BASE_URL=https://<tenant_id>.<region>.crossid.io/oauth2/ \
 uvicorn app:app --port 5000
 ```
 
