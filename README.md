@@ -11,8 +11,16 @@ pip3 install -r requirements.txt
 Then run server with:
 
 ```bash
-ISSUER_BASE_URL=https://<tenant_id>.crossid.io/oauth2/ \
-uvicorn app:app --port 8080
+ISSUER_BASE_URL=https://crossid.us.local.crossid.io/oauth2/ \
+REQUESTS_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt \
+uvicorn app:app --port 5000
+```
+
+Optionally, if you encounter "httpx.ConnectError: [SSL: CERTIFICATE_VERIFY_FAILED", you would need to export
+
+```bash
+REQUESTS_CA_BUNDLE=<path/to/ca-certificates.crt>
+SSL_CERT_FILE=<path/to/ca-certificates.crt>
 ```
 
 ## Deploying on Digital Ocean
